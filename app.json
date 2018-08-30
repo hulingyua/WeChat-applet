@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/goods/goods",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/test/test",
+    "pages/logs/logs",
+    "pages/categories/categories",
+    "pages/cart/cart",
+    "pages/find/find",
+    "pages/center/center"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "huayuer的",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#2e9789",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#F15B5B",
+    "list": [
+      {
+        "pagePath": "pages/goods/goods",
+        "text": "精选"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/categories/categories",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我的"
+      }
+    ],
+    "position": "bottom"
+  },
+  "debug": true
+}

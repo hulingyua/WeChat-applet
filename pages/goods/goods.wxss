@@ -1,0 +1,32 @@
+/* pages/goods/goods.wxss */
+.goods{
+  background-color: lightblue;
+  padding: 20rpx;
+}
+.search_container {
+  position: fixed;
+  left: 20rpx;
+  top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  width: 650rpx;
+  background-color: #fff;
+  border-radius: 4px;
+  padding-left: 20rpx;
+  height: 70rpx;
+  box-sizing: border-box;
+}
+.search_input {
+  margin-top: 10rpx;
+  width:500rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+}
+.search_btn {
+  width: 150rpx;
+  height: 70rpx;
+  background-color: lightcoral;
+  color: #fff;
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+}

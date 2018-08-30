@@ -1,0 +1,105 @@
+
+  <scroll-view scroll-y='true'>
+  <navigator open-type="navigateBack">back</navigator>
+  <view class="testtitle">{{title}}</view>
+  <view>
+    <button bindtap='choosePic'>选择照片/拍照</button>
+    <image wx:if='{{chooseSrc}}' src='{{chooseSrc}}' bindtap='loadImg' mode='widthFix' style='width:100vw'></image>
+  </view>
+  <view>
+    <map style='width:100vw;height:30vh' latitude='latitude' longitude='longitude' id='myMap'></map>
+  </view>
+  <view>
+    <!-- <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 40vh;"></camera> -->
+    <button type='primary' size='mini' bindtap='takePic'>拍照</button>
+    <button size='mini' bindtap='takeVideo'>录像</button><button size='mini' bindtap='stopVideo'>停止</button>
+    <text>{{picSrc}}</text>
+    <image wx:if='{{picSrc}}' src='{{picSrc}}' style='width: 100%;height:40vh'></image>
+    <image wx:if='{{tempSrc}}' src='{{tempSrc}}' style='width: 100%;height:40vh'></image>  
+    <video wx:if='{{videoSrc}}' src='{{videoSrc}}' style='width: 100%;height:40vh'></video>
+  </view>
+  <view>
+    <image src='/images/6.jpg' style='height:150px;width:150px'></image>
+  </view>
+  <view>
+    <audio src='{{audioData.src}}' controls='{{audioData.controls}}' author='{{audioData.author}}' poster='{{audioData.poster}}' bindtimeupdate="timeUpdate" name='{{audioData.name}}' id='myAudio' ></audio>
+    调节音量：<slider min='0' max='100' show-value='true' bindchange='setPlayTime'></slider>
+  </view>
+
+  <form bindsubmit="submitInfo" bindreset="resetForm">
+    <switch checked='{{switchValue.checked}}' name="switch" color='{{switchValue.color}}' bindchange="getSwitch"></switch>
+
+    <slider min='{{slider.min}}' name="slider" max='{{slider.max}}' show-value='{{slider.showValue}}' block-color='{{slider.blockColor}}' block-size='{{slider.blockSize}}' value='{{slider.value}}' activeColor="{{slider.activeColor}}" backgroundColor='{{slider.backgroundColor}}' bindchange="getSlider"></slider>
+
+    <input placeholder='请随意输入' name="input" style='border: 1px solid #ccc;border-radius:5px;padding:4px;font-size:15px;' bindinput='getImmedia' bindblur='getBlur' type='idcard'></input>
+
+    <picker value='{{selectors[index]}}' name='selector' range='{{selectors}}' bindchange="getSelectors"><view>选择学科：{{selectors[index]}}</view></picker>
+    <picker mode="multiSelector" bindcolumnchange="columnChange" range='multipleArr'>请选择物种</picker>
+    <button form-type='submit' type='primary'>提交</button><button form-type='reset'>重置</button>
+
+  </form>
+
+
+  <view>
+    <checkbox-group bindchange="getCheckBox">
+      <label wx:for='{{options}}' wx:key="{{index}}">
+        <checkbox disabled='{{item.disabled}}' color='{{item.color}}' checked='{{item.checked}}' value='{{item.name}}'>{{item.value}}</checkbox>
+      </label>
+    </checkbox-group>
+  </view>
+  <view>
+    <button open-type="share" type='primary'>分享</button>
+    <button open-type=''  plain='true' loading="true" size='mini'>按钮镂空</button>
+    <button open-type='getUserInfo' lang='zh_CN' bindgetuserinfo='getUserInfo'>获取用户信息</button>
+    <button open-type='contact'>进入会话</button>
+  </view>
+  <view>
+    <progress percent='20' show-info='20'></progress>
+    <progress percent='20' color='red'></progress>  
+    <progress percent='40' show-info=''></progress>
+    <progress percent='60' activeColor='pink' backgroundColor='lightblue'></progress>  
+    <progress percent='80' active='true'></progress>
+  </view>
+  <view><rich-text nodes="{{nodes}}"></rich-text></view>
+  <view><rich-text nodes="{{html}}"></rich-text></view>
+  <view><text selectable='true'>我是文本默认不可选</text></view>
+  <view>
+  <swiper style="height:200px;width:250px" indicator-dots="true" autoplay="true" interval="2000" circular="true" vertical="true" previous-margin="0" display-multiple-items="1">
+    <block wx:for="{{images}}" wx:key="index">
+      <swiper-item>
+        <image src='{{item}}' style='width:200px;height:200px'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+  <view style='margin-top:10px'>
+    <movable-area style='background-color:#666;width:300px;height:200px' >
+      <movable-view class='movableview' style='width:50px;height:50px;background-color:#eee' direction="all" scale="true" out-of-bounds="true" inertia="true" x="20" y="50">hha
+      </movable-view>
+    </movable-area>
+  </view>
+  <view>
+    <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" controls="{{false}}" event-model="bubble">
+      <cover-view class="controls">
+        <cover-view class="play" bindtap="play">
+          <cover-image class="img" src="/images/1.jpeg" />
+        </cover-view>
+        <cover-view class="pause" bindtap="pause">
+          <cover-image class="img" src="/images/2.jpeg" />
+        </cover-view>
+        <cover-view class="time">00:00</cover-view>
+      </cover-view>
+    </video>
+  </view>
+  <view>
+    <icon type='success'>成功</icon>
+    <icon type='success_no_circle'></icon>
+    <icon type='info'></icon>
+    <icon type='warn'></icon>
+    <icon type='waiting'></icon>
+    <icon type='cancel'></icon>
+    <icon type='download'></icon>
+    <icon type='search'></icon>
+    <icon type='clear'></icon>
+  </view>
+</scroll-view>

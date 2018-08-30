@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<view class='login'>
+  <image class='bg' src='/images/5.jpg'></image>
+  <view class='title'>
+    <text>买买买花</text>
+  </view>
+  <form bindsubmit='login'>
+    <view class='clearfix wrapper'><text class='name-warn' wx:if='{{showNameWarn}}'>* </text><text class='name'>用户名：</text><input class='userInfo' name='name' value='{{userName}}'></input></view>
+    <view class='clearfix wrapper'><text class='password-warn' wx:if='{{showPasswordWarn}}'>* </text><text class='password'>密码：</text><input class='userInfo' name='password' value='{{password}}' type='password'></input></view>
+    <view class='clearfix'><button class='wx-login fr' open-type='getUserInfo' bindgetuserinfo="getUserInfo" size='mini'>微信登录</button></view>
+    <button type='primary' form-type='submit'>登录</button>
+  </form>
+</view>

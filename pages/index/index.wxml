@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<wxs module="m1">
+  var msg = "欢迎来到小花园";
+  module.exports.message = msg;
+</wxs>
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+    <text class='usertitle'>{{m1.message}}</text>
+    <view bindtap='showMsg'>点击触发事件</view>
+    <view bindtap='changeNum'>点击加一{{num}}</view>
+    <navigator url="/pages/test/test" hover-class="navigator-hover">跳转到新页面</navigator>      <view><text hover-class='navigator-hover' bindtap='redirectUrl'>重定向页面</text></view>
+  <view>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

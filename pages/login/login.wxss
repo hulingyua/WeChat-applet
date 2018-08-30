@@ -1,0 +1,65 @@
+/* pages/login/login.wxss */
+.login {
+  font-size: 0.7rem;
+  padding: 1rem;
+}
+.bg {
+  width: 90vw;
+  height: 90vw;
+}
+.title {
+  text-align: center;
+  color: salmon;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 1rem 0 1rem 0;
+}
+.wrapper {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.name,
+.password {
+  display: block;
+  float: left;
+  width: 18%;
+  text-align: right;
+  height: 100%;
+  line-height: 100%;
+  margin-top: 0.2rem;
+}
+.name-warn,
+.password-warn {
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 0.1rem;
+}
+.userInfo {
+  float: left;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both
+}
+.clearfix {
+  zoom: 1;
+}
+.fr {
+  float: right;
+}
+.wx-login {
+  text-align: right;
+  color: #1679DE;
+  padding-right: 2.2rem;
+  margin-bottom: 0.5rem;
+  margin-right: 2.2rem;
+  background-color: #fff;
+}
