@@ -8,7 +8,10 @@
     "pages/categories/categories",
     "pages/cart/cart",
     "pages/find/find",
-    "pages/center/center"
+    "pages/center/center",
+    "pages/notice/notice",
+    "pages/detail/detail",
+    "pages/authorize/authorize"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -16,7 +19,7 @@
     "navigationBarTitleText": "huayuer的",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#2e9789",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#000",
